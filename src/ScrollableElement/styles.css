@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* DEBUG */
+  /* outline: 1px solid red !important; */
+}
+
+html {
+  font-size: 62.5%;
+  min-height: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: $color-bg-dark; */
+  min-height: 100%;
+  height: 100%;
+  /* color: $color-font; */
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  color: #e6e6e6;
+  /* temporary */
+  /* background-color: #091833; */
+}
+
+/* ------- */
+
+.App {
+  height: 100%;
+}
+
+/* ------- */
+
+.react-resizable {
+  position: relative;
+}
+
+.custom-handle {
+  position: absolute;
+}
+
+.custom-handle-e {
+  top: 0;
+  right: 0;
+  width: 11px;
+  height: 100%;
+  margin: 0 -6px;
+  /* border-left: 5px solid transparent;
+  border-right: 5px solid transparent; */
+  cursor: col-resize;
+  opacity: 0;
+}
+
+.custom-handle-e:hover {
+  opacity: 1;
+  width: 12px;
+  border-left: 6px solid #ea00d9;
+  border-right: 6px solid #ea00d9;
+  transition: all 0.4s ease;
+}
+
+.custom-handle-e:active {
+  width: 12px;
+  border-left: 6px solid #ea00d9;
+  border-right: 6px solid #ea00d9;
+}
+
+/*
+ marginに負の値を与えることで要素の外側に余白を作るのではなく
+ 内側に余白を作ることができる 
+ 他border-topなどを指定するなどすれば、
+ リサイズハンドルを任意の箇所に配置できる
+*/
+.custom-handle-s {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  margin: -2px 0;
+  cursor: ns-resize;
+  opaicty: 0;
+}
+
+.custom-handle-s:hover {
+  opacity: 1;
+  border-top: 6px solid black;
+  /* border-top: 2px solid #ea00d9; */
+  /* border-bottom: 2px solid #ea00d9; */
+  transition: all 0.4s ease;
+}
+
+.custom-handle:active {
+  border-top: 6px solid black;
+  /* border-top: 2px solid #ea00d9; */
+}
+
+.section {
+  position: relative;
+}
